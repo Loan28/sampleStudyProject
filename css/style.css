@@ -1,0 +1,23 @@
+	body
+	{
+		background-image: url("../images/white_wave.png");
+		background-repeat;
+		font-family: 'Open Sans', sans-serif;
+	}
+	
+	.btn
+	{
+		display:inline-block;
+		margin-bottom:0;
+		font-weight:400;
+		line-height:1.42857143;
+		text-align:right;
+		vertical-align:middle;
+		border:1px solid transparent;
+		border-radius:4px
+	}
+		
+	a
+	{	
+		color: #4284d3;
+	}

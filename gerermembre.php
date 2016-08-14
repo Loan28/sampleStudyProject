@@ -1,0 +1,104 @@
+<?php
+	
+	//Inclusion du fichier me permettant de me connecter à ma BDD.
+	include 'connect_PDO.inc.php';
+	
+	//Variable contenant la date d'aujoud'hui
+	$date = date("d.m.Y");
+	
+	//Requête récupérant les membres de la BDD qui sont actifs
+	$query =	'SELECT idMembre,nomMembre,prenomMembre,numbadge,typeMembre
+					FROM tblmembres
+					INNER JOIN tbltypemembre
+					ON fkTypeMembre = idTypemembre
+					WHERE Activite = "0"
+					ORDER BY nomMembre';
+	$prep = $connexion->prepare($query);
+	$prep->setFetchMode(PDO::FETCH_OBJ);
+	$prep->execute();	
+	
+	//Test si l'utilisateur appuie sur le bouton retour	
+	if(isset($_POST['retour']))
+	{
+		header('Location: Accueil.php');
+	}
+?>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/gerer2.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome-4.6.2/css/font-awesome.min.css"/>
+</head>
+	<body>
+	<form method = "POST" action="">
+	<form id="form1" method="GET" action="">
+	<div class="Montableau">
+	<div class="tbl-header">
+		<table>
+			<tr>
+				<th>Nom/Prénom</th>
+				<th>N°badge</th>
+				<th>Type</th>
+				<th>Gérer</th>
+			</tr>
+		</table>
+	</div>
+		<div class="tbl-content">
+		<table>
+		<?php
+			while($ligne = $prep->fetch())
+			{
+				
+				$Membre = $ligne->nomMembre.' '.$ligne->prenomMembre;
+				$badge = $ligne->numbadge;
+				$type = $ligne->typeMembre;
+				
+				//Test si l'utilisateur est le supersiveur si oui, on empêche la suppression.
+				if($_SESSION['NBadge'] == $badge)
+				{
+					$action = '<i class="fa fa-times-circle fa-3x" aria-hidden="true"></i>';
+				}
+				else
+				{
+					$action = '<a href="modifmembre.php?idmembre='.$ligne->idMembre.'&action=del"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></a>';
+				}	
+					?>
+						<tr>
+							<td>					
+								<input name="Membre" type="text" readonly="true" class="borderless" value="<?php echo $Membre ;?>"/>	
+							</td>
+							<td>
+								<input name="Nbadge" type="text" readonly="true" class="borderless" value="<?php echo $badge; ?>"/>
+							</td>	
+							<td>						
+								<input name="type" type="text" readonly="true" class="borderless" value="<?php echo $type; ?>"/>
+							</td>
+							<td>
+							<div class="modificone">
+								<a href="modifmembre.php?idmembre=<?php echo $ligne->idMembre; ?>&action=modif"><i class="fa fa-pencil-square fa-3x" aria-hidden="true"></i></a>
+								&nbsp;
+								<?php echo $action;?>
+							</div>
+							</td>
+						</tr>	
+					<?php
+				
+			}
+			
+		?>
+		</table>
+		</div>
+		<br>
+		</div>
+		
+		<input type="button" class="btn btn-primary" name="lien1" value="Ajouter un membre" onclick="self.location.href='modifmembre.php?action=add'">
+		<span class="retour">
+		<input type="submit" class="btn btn-primary" name="retour" value="Retour"/>
+		</span>
+	</form>
+	</form>
+	</body>
+</html>

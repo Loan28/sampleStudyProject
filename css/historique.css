@@ -1,0 +1,58 @@
+	.btn-primary
+	{
+		padding:12px 25px;
+		color:#fff;
+		background-color:#4284d3;
+		border-color:#949494;
+		font-size: 20px;
+	}
+	.btnretour
+	{
+		float: right;
+	}
+	table{
+	  width:100%;
+	  table-layout: fixed;
+	  border-collapse:collapse;
+	}
+	.tbl-header{
+	  background-color: #4284d3;
+	  
+	 }
+	.texttitre
+	{
+		color: #000000;
+	}
+	.tbl-content{
+	  height:528px;
+	  overflow-x:auto;
+	  margin-top: 0px;
+	  border: 1px solid;
+	  border-color: #4284d3;
+	  background-color: #ffffff;	
+	}
+	th{
+	  padding: 20px 15px;
+	  text-align: left;
+	  font-weight: 500;
+	  font-size: 25px;
+	  color: #fff;
+	}
+	td{
+	  padding: 15px;
+	  text-align: left;
+	  vertical-align:middle;
+	  font-size: 20px;
+	  color: #24454c;
+	  border-bottom: solid 1px rgba(66,132,211,0.4);
+
+	}
+	::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}

@@ -1,0 +1,41 @@
+	.btnprimary
+	{
+		padding:12px 25px;
+		color:#fff;
+		background-color:#4284d3;
+		border-color:#949494;
+		font-size:20px;
+	}
+	label
+	{
+		display: inline-block;
+		width: 180px;
+		font-size: 20px;
+	}
+	select
+	{
+		margin-right: 68px;
+		font-size: 30px;
+	}
+	.inputtext
+	{
+		padding-right: 40px;
+	}
+	.inputtext2
+	{
+		display: inline-block;
+		margin-left: 200px;
+	}
+	.checkbox
+	{
+		font-size: 30px;
+	}
+	
+	.increase {
+    width:20px;
+    height:20px;
+	}
+	input[type="file"]
+	{
+	font-size: 30px;
+	}

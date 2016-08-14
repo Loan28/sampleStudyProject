@@ -1,0 +1,42 @@
+	.btnprimary
+	{
+		padding:12px 25px;
+		color:#fff;
+		background-color:#4284d3;
+		border-color:#949494;
+		font-size:20px;
+	}
+	.div1
+	{
+		margin-top: 30px;
+	}
+	label
+	{
+		display: inline-block;
+		width: 100px;
+		font-size: 20px;
+	}
+	select
+	{
+		margin-right: 68px;
+		font-size: 20px;
+	}
+	.inputtext
+	{
+		padding-right: 20px;
+	}
+	.inputtext2
+	{
+		display: inline-block;
+		margin-left: 100px;
+	}
+	
+input[type="text"] 
+{
+  font-size: 20px;
+}
+input[type="text"]:focus 
+{
+  outline: none;
+  
+}

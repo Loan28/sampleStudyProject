@@ -1,0 +1,28 @@
+	.btnprimary
+	{
+		padding:12px 25px;
+		color:#fff;
+		background-color:#4284d3;
+		border-color:#949494;
+		font-size:20px;
+	}
+	label
+	{
+		display: block;
+		width: 150px;
+		float: left;
+		font-size: 15px;
+	}
+	select
+	{
+		margin-right: 68px;
+	}
+	.inputtext
+	{
+		padding-right: 30px;
+	}
+	.inputtext2
+	{
+		float:right;
+		margin-right: 700px;
+	}
